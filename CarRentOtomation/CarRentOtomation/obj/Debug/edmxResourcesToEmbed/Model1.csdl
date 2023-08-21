@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RentCarProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TblMercedes">
+    <Key>
+      <PropertyRef Name="ArabaId" />
+    </Key>
+    <Property Name="ArabaId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ArabaModel" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ArabaFiyat" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="ArabaYil" Type="DateTime" Precision="0" />
+    <Property Name="ArabaCategory" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TblMusteri">
+    <Key>
+      <PropertyRef Name="MusteriId" />
+    </Key>
+    <Property Name="MusteriId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MusteriAd" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="MusteriSoyad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MusteriTc" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="MusteriCinsiyet" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="TblPersonel">
+    <Key>
+      <PropertyRef Name="PersonelId" />
+    </Key>
+    <Property Name="PersonelId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PersonelAd" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PersonelSoyad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PersonelSifre" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="PersonelCinsiyet" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="TblToyota">
+    <Key>
+      <PropertyRef Name="ArabaId" />
+    </Key>
+    <Property Name="ArabaId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ArabaModel" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ArabaFiyat" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="ArabaYil" Type="DateTime" Precision="0" />
+    <Property Name="ArabaCategory" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="RentCarProjectEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TblMercedes" EntityType="Self.TblMercedes" />
+    <EntitySet Name="TblMusteri" EntityType="Self.TblMusteri" />
+    <EntitySet Name="TblPersonel" EntityType="Self.TblPersonel" />
+    <EntitySet Name="TblToyota" EntityType="Self.TblToyota" />
+  </EntityContainer>
+</Schema>

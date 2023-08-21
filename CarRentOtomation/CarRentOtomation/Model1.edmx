@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RentCarProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TblMercedes">
+          <Key>
+            <PropertyRef Name="ArabaId" />
+          </Key>
+          <Property Name="ArabaId" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ArabaModel" Type="varchar" MaxLength="15" />
+          <Property Name="ArabaFiyat" Type="varchar" MaxLength="8" />
+          <Property Name="ArabaYil" Type="date" />
+          <Property Name="ArabaCategory" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="TblMusteri">
+          <Key>
+            <PropertyRef Name="MusteriId" />
+          </Key>
+          <Property Name="MusteriId" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MusteriAd" Type="varchar" MaxLength="15" />
+          <Property Name="MusteriSoyad" Type="varchar" MaxLength="10" />
+          <Property Name="MusteriTc" Type="varchar" MaxLength="11" />
+          <Property Name="MusteriCinsiyet" Type="bit" />
+        </EntityType>
+        <EntityType Name="TblPersonel">
+          <Key>
+            <PropertyRef Name="PersonelId" />
+          </Key>
+          <Property Name="PersonelId" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonelAd" Type="varchar" MaxLength="15" />
+          <Property Name="PersonelSoyad" Type="varchar" MaxLength="10" />
+          <Property Name="PersonelSifre" Type="varchar" MaxLength="5" />
+          <Property Name="PersonelCinsiyet" Type="bit" />
+        </EntityType>
+        <EntityType Name="TblToyota">
+          <Key>
+            <PropertyRef Name="ArabaId" />
+          </Key>
+          <Property Name="ArabaId" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ArabaModel" Type="varchar" MaxLength="15" />
+          <Property Name="ArabaFiyat" Type="varchar" MaxLength="8" />
+          <Property Name="ArabaYil" Type="date" />
+          <Property Name="ArabaCategory" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="RentCarProjectModelStoreContainer">
+          <EntitySet Name="TblMercedes" EntityType="Self.TblMercedes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblMusteri" EntityType="Self.TblMusteri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblPersonel" EntityType="Self.TblPersonel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblToyota" EntityType="Self.TblToyota" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RentCarProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TblMercedes">
+          <Key>
+            <PropertyRef Name="ArabaId" />
+          </Key>
+          <Property Name="ArabaId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ArabaModel" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ArabaFiyat" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="ArabaYil" Type="DateTime" Precision="0" />
+          <Property Name="ArabaCategory" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblMusteri">
+          <Key>
+            <PropertyRef Name="MusteriId" />
+          </Key>
+          <Property Name="MusteriId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MusteriAd" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="MusteriSoyad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MusteriTc" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="MusteriCinsiyet" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="TblPersonel">
+          <Key>
+            <PropertyRef Name="PersonelId" />
+          </Key>
+          <Property Name="PersonelId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonelAd" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="PersonelSoyad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PersonelSifre" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="PersonelCinsiyet" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="TblToyota">
+          <Key>
+            <PropertyRef Name="ArabaId" />
+          </Key>
+          <Property Name="ArabaId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ArabaModel" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ArabaFiyat" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="ArabaYil" Type="DateTime" Precision="0" />
+          <Property Name="ArabaCategory" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="RentCarProjectEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TblMercedes" EntityType="Self.TblMercedes" />
+          <EntitySet Name="TblMusteri" EntityType="Self.TblMusteri" />
+          <EntitySet Name="TblPersonel" EntityType="Self.TblPersonel" />
+          <EntitySet Name="TblToyota" EntityType="Self.TblToyota" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RentCarProjectModelStoreContainer" CdmEntityContainer="RentCarProjectEntities">
+          <EntitySetMapping Name="TblMercedes">
+            <EntityTypeMapping TypeName="RentCarProjectModel.TblMercedes">
+              <MappingFragment StoreEntitySet="TblMercedes">
+                <ScalarProperty Name="ArabaId" ColumnName="ArabaId" />
+                <ScalarProperty Name="ArabaModel" ColumnName="ArabaModel" />
+                <ScalarProperty Name="ArabaFiyat" ColumnName="ArabaFiyat" />
+                <ScalarProperty Name="ArabaYil" ColumnName="ArabaYil" />
+                <ScalarProperty Name="ArabaCategory" ColumnName="ArabaCategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblMusteri">
+            <EntityTypeMapping TypeName="RentCarProjectModel.TblMusteri">
+              <MappingFragment StoreEntitySet="TblMusteri">
+                <ScalarProperty Name="MusteriId" ColumnName="MusteriId" />
+                <ScalarProperty Name="MusteriAd" ColumnName="MusteriAd" />
+                <ScalarProperty Name="MusteriSoyad" ColumnName="MusteriSoyad" />
+                <ScalarProperty Name="MusteriTc" ColumnName="MusteriTc" />
+                <ScalarProperty Name="MusteriCinsiyet" ColumnName="MusteriCinsiyet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblPersonel">
+            <EntityTypeMapping TypeName="RentCarProjectModel.TblPersonel">
+              <MappingFragment StoreEntitySet="TblPersonel">
+                <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+                <ScalarProperty Name="PersonelAd" ColumnName="PersonelAd" />
+                <ScalarProperty Name="PersonelSoyad" ColumnName="PersonelSoyad" />
+                <ScalarProperty Name="PersonelSifre" ColumnName="PersonelSifre" />
+                <ScalarProperty Name="PersonelCinsiyet" ColumnName="PersonelCinsiyet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblToyota">
+            <EntityTypeMapping TypeName="RentCarProjectModel.TblToyota">
+              <MappingFragment StoreEntitySet="TblToyota">
+                <ScalarProperty Name="ArabaId" ColumnName="ArabaId" />
+                <ScalarProperty Name="ArabaModel" ColumnName="ArabaModel" />
+                <ScalarProperty Name="ArabaFiyat" ColumnName="ArabaFiyat" />
+                <ScalarProperty Name="ArabaYil" ColumnName="ArabaYil" />
+                <ScalarProperty Name="ArabaCategory" ColumnName="ArabaCategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

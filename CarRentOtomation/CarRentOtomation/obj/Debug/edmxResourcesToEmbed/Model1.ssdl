@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RentCarProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TblMercedes">
+    <Key>
+      <PropertyRef Name="ArabaId" />
+    </Key>
+    <Property Name="ArabaId" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ArabaModel" Type="varchar" MaxLength="15" />
+    <Property Name="ArabaFiyat" Type="varchar" MaxLength="8" />
+    <Property Name="ArabaYil" Type="date" />
+    <Property Name="ArabaCategory" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="TblMusteri">
+    <Key>
+      <PropertyRef Name="MusteriId" />
+    </Key>
+    <Property Name="MusteriId" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MusteriAd" Type="varchar" MaxLength="15" />
+    <Property Name="MusteriSoyad" Type="varchar" MaxLength="10" />
+    <Property Name="MusteriTc" Type="varchar" MaxLength="11" />
+    <Property Name="MusteriCinsiyet" Type="bit" />
+  </EntityType>
+  <EntityType Name="TblPersonel">
+    <Key>
+      <PropertyRef Name="PersonelId" />
+    </Key>
+    <Property Name="PersonelId" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonelAd" Type="varchar" MaxLength="15" />
+    <Property Name="PersonelSoyad" Type="varchar" MaxLength="10" />
+    <Property Name="PersonelSifre" Type="varchar" MaxLength="5" />
+    <Property Name="PersonelCinsiyet" Type="bit" />
+  </EntityType>
+  <EntityType Name="TblToyota">
+    <Key>
+      <PropertyRef Name="ArabaId" />
+    </Key>
+    <Property Name="ArabaId" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ArabaModel" Type="varchar" MaxLength="15" />
+    <Property Name="ArabaFiyat" Type="varchar" MaxLength="8" />
+    <Property Name="ArabaYil" Type="date" />
+    <Property Name="ArabaCategory" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityContainer Name="RentCarProjectModelStoreContainer">
+    <EntitySet Name="TblMercedes" EntityType="Self.TblMercedes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblMusteri" EntityType="Self.TblMusteri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblPersonel" EntityType="Self.TblPersonel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblToyota" EntityType="Self.TblToyota" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RentCarProjectModelStoreContainer" CdmEntityContainer="RentCarProjectEntities">
+    <EntitySetMapping Name="TblMercedes">
+      <EntityTypeMapping TypeName="RentCarProjectModel.TblMercedes">
+        <MappingFragment StoreEntitySet="TblMercedes">
+          <ScalarProperty Name="ArabaId" ColumnName="ArabaId" />
+          <ScalarProperty Name="ArabaModel" ColumnName="ArabaModel" />
+          <ScalarProperty Name="ArabaFiyat" ColumnName="ArabaFiyat" />
+          <ScalarProperty Name="ArabaYil" ColumnName="ArabaYil" />
+          <ScalarProperty Name="ArabaCategory" ColumnName="ArabaCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblMusteri">
+      <EntityTypeMapping TypeName="RentCarProjectModel.TblMusteri">
+        <MappingFragment StoreEntitySet="TblMusteri">
+          <ScalarProperty Name="MusteriId" ColumnName="MusteriId" />
+          <ScalarProperty Name="MusteriAd" ColumnName="MusteriAd" />
+          <ScalarProperty Name="MusteriSoyad" ColumnName="MusteriSoyad" />
+          <ScalarProperty Name="MusteriTc" ColumnName="MusteriTc" />
+          <ScalarProperty Name="MusteriCinsiyet" ColumnName="MusteriCinsiyet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblPersonel">
+      <EntityTypeMapping TypeName="RentCarProjectModel.TblPersonel">
+        <MappingFragment StoreEntitySet="TblPersonel">
+          <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+          <ScalarProperty Name="PersonelAd" ColumnName="PersonelAd" />
+          <ScalarProperty Name="PersonelSoyad" ColumnName="PersonelSoyad" />
+          <ScalarProperty Name="PersonelSifre" ColumnName="PersonelSifre" />
+          <ScalarProperty Name="PersonelCinsiyet" ColumnName="PersonelCinsiyet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblToyota">
+      <EntityTypeMapping TypeName="RentCarProjectModel.TblToyota">
+        <MappingFragment StoreEntitySet="TblToyota">
+          <ScalarProperty Name="ArabaId" ColumnName="ArabaId" />
+          <ScalarProperty Name="ArabaModel" ColumnName="ArabaModel" />
+          <ScalarProperty Name="ArabaFiyat" ColumnName="ArabaFiyat" />
+          <ScalarProperty Name="ArabaYil" ColumnName="ArabaYil" />
+          <ScalarProperty Name="ArabaCategory" ColumnName="ArabaCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
